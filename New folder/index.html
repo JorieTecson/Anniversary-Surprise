@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For My Love 💗</title>
+  <!-- Google Fonts: Cormorant Garamond (elegant serif) + Nunito (soft sans) + Great Vibes (script) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background canvas for floating hearts + glowing particles -->
+  <canvas id="bg"></canvas>
+
+  <!-- ============ 1. WELCOME ============ -->
+  <section id="welcome" class="screen active">
+    <div class="center">
+      <h1 class="script">Hey, my love... 💗</h1>
+      <p class="lead">I made something special for you.</p>
+      <button class="btn" data-next="suspense">Please open mylove </button>
+    </div>
+  </section>
+
+  <!-- ============ 2. SUSPENSE (envelope) ============ -->
+  <section id="suspense" class="screen">
+    <div class="center">
+      <p class="lead">Someone has a little something to tell you...</p>
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-paper"><span>For you 💗</span></div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="env-seal">❤</div>
+      </div>
+      <button class="btn" id="openLetter">Open My Letter 💌</button>
+    </div>
+  </section>
+
+  <!-- ============ 3. LOVE LETTER (typewriter) ============ -->
+  <section id="letter" class="screen">
+    <div class="center">
+      <div class="glass letter-card">
+        <p id="typed" class="typed"></p>
+        <span class="cursor">|</span>
+      </div>
+      <button class="btn hidden" id="moreBtn" data-next="gallery">There's More... 💗</button>
+    </div>
+  </section>
+
+  <!-- ============ 4. GALLERY ============ -->
+  <section id="gallery" class="screen scroll">
+    <h2 class="script">Our Memories</h2>
+    <p class="lead small">Tap a photo to see it bigger</p>
+    <!-- HOW TO REPLACE PHOTOS: change each img src to your own file, e.g. "photos/us1.jpg" -->
+    <div class="polaroids">
+      <figure class="polaroid" style="--r:-4deg">
+        <img src="https://picsum.photos/seed/love1/400/400" alt="Memory 1" />
+        <figcaption>The day everything changed 💫</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r:3deg">
+        <img src="https://picsum.photos/seed/love2/400/400" alt="Memory 2" />
+        <figcaption>My favorite adventure 🌅</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r:-2deg">
+        <img src="https://picsum.photos/seed/love3/400/400" alt="Memory 3" />
+        <figcaption>You, laughing. Always you. 😊</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r:5deg">
+        <img src="https://picsum.photos/seed/love4/400/400" alt="Memory 4" />
+        <figcaption>Home is wherever you are 🏡</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r:-3deg">
+        <img src="https://picsum.photos/seed/love5/400/400" alt="Memory" />
+        <figcaption>Every little adventure with you 🌍</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r:4deg">
+        <img src="https://picsum.photos/seed/love6/400/400" alt="Memory" />
+        <figcaption>Us, being us 💞</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r:-5deg">
+        <img src="https://picsum.photos/seed/love7/400/400" alt="Memory" />
+        <figcaption>The sweetest moments ✨</figcaption>
+      </figure>
+      <figure class="polaroid" style="--r:2deg">
+        <img src="https://picsum.photos/seed/love8/400/400" alt="Memory" />
+        <figcaption>I'd relive this day forever 🌸</figcaption>
+      </figure>
+    </div>
+    <button class="btn" data-next="reasons">Why I Love You 💗</button>
+  </section>
+
+  <!-- Lightbox for enlarged photo -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightImg" alt="" />
+    <p id="lightCap"></p>
+  </div>
+
+  <!-- ============ 5. REASONS (flip cards) ============ -->
+  <section id="reasons" class="screen scroll">
+    <h2 class="script">Reasons Why I Love You</h2>
+    <p class="lead small">Tap a card</p>
+    <div class="cards">
+      <div class="card"><div class="card-in"><div class="face front"><i class="fa-solid fa-heart"></i></div><div class="face back">Your beautiful, your eyes and everything.</div></div></div>
+      <div class="card"><div class="card-in"><div class="face front"><i class="fa-solid fa-heart"></i></div><div class="face back">Your kind heart.</div></div></div>
+      <div class="card"><div class="card-in"><div class="face front"><i class="fa-solid fa-heart"></i></div><div class="face back">The way you make me laugh.</div></div></div>
+      <div class="card"><div class="card-in"><div class="face front"><i class="fa-solid fa-heart"></i></div><div class="face back">Imong ka inheat haha</div></div></div>
+      <div class="card"><div class="card-in"><div class="face front"><i class="fa-solid fa-heart"></i></div><div class="face back">How you make everything feel better.</div></div></div>
+      <div class="card"><div class="card-in"><div class="face front"><i class="fa-solid fa-heart"></i></div><div class="face back">Simply because you're YOU.</div></div></div>
+    </div>
+    <button class="btn" data-next="gift">Next 🎁</button>
+  </section>
+
+  <!-- ============ 7. GIFT ============ -->
+  <section id="gift" class="screen">
+    <div class="center">
+      <p class="lead">Wait... there's one last thing.</p>
+      <div class="gift" id="giftBox">
+        <div class="gift-lid"></div>
+        <div class="gift-body"></div>
+      </div>
+      <p id="giftMsg" class="gift-msg hidden">If I could live a thousand lifetimes, I would still look for you in every single one.</p>
+      <button class="btn hidden" id="finalBtn" data-next="finale">Continue 💗</button>
+    </div>
+  </section>
+
+  <!-- ============ 8. FINALE ============ -->
+  <section id="finale" class="screen scroll">
+    <div class="center">
+      <div class="big-heart">❤</div>
+      <h1 class="script">Happy Anniversary, My Love! ❤️</h1>
+      <p class="final-text">Thank you for being part of my story. Thank you for every laugh, every hug, every little moment, and every memory we've created together. You're not just my girlfriend. You're my favorite person, my safe place, and my greatest blessing. Here's to more memories, more adventures, more laughter, and more years of choosing each other. I love you, always and forever. ❤️</p>
+      <button class="btn" id="kissBtn">One More Kiss? 💋</button>
+      <p id="kissMsg" class="kiss-msg hidden">Sending you unlimited kisses! 😘❤️</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
